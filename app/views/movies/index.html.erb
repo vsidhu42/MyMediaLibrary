@@ -16,7 +16,13 @@
     <% @movies.each do |movie| %>
       <tr>
         <td><%= movie.movieid %></td>
-        <td><%= movie.title %></td>
+        <td><%= movie.title %>
+          <br>
+          <% Movierating.where(themovieid: movie.movieid).find_each do |movierates| %>
+            <span style="padding-left:20px; font-size:10px;">Name: <%= movierates.name %> Score: <%= movierates.rating %></span>
+            <br>
+          <% end %>
+        </td>
         <td><%= movie.theyear %></td>
         <td><%= link_to 'Show', movie %></td>
         <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
