@@ -4,7 +4,11 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.all.paginate(page: params[:page], per_page: 50)
+
+    @search = Movie.search(params[:q])
+    @movies = @search.result.paginate(page: params[:page], per_page: 50)
+    
+    #@movies = Movie.all.paginate(page: params[:page], per_page: 50)
   end
 
   # GET /movies/1
