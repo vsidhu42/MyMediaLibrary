@@ -19,6 +19,11 @@
       <tr>
         <td><%= song.songid %></td>
         <td><%= song.title %>
+          <br>
+          <% Songrating.where(thesongid: song.songid).find_each do |songrates| %>
+            <span style="padding-left:20px; font-size:10px;">Name: <%= songrates.name %> Score: <%= songrates.rating %></span>
+            <br>
+          <% end %>
         </td>
         <td><%= song.theyear %></td>
         <td><%= song.artist %></td>
