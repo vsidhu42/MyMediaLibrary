@@ -1,0 +1,2 @@
+module BookratingsHelper
+end

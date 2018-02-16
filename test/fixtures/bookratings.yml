@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bookratingid: 1
+  thebookid: 1
+  rating: 9.99
+  name: MyString
+
+two:
+  bookratingid: 1
+  thebookid: 1
+  rating: 9.99
+  name: MyString

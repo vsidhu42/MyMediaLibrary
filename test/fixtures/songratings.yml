@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  songratingid: 1
+  thesongid: 1
+  rating: 9.99
+  name: MyString
+
+two:
+  songratingid: 1
+  thesongid: 1
+  rating: 9.99
+  name: MyString

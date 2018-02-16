@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bookratings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bookratingid</th>
+      <th>Thebookid</th>
+      <th>Rating</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookratings.each do |bookrating| %>
+      <tr>
+        <td><%= bookrating.bookratingid %></td>
+        <td><%= bookrating.thebookid %></td>
+        <td><%= bookrating.rating %></td>
+        <td><%= bookrating.name %></td>
+        <td><%= link_to 'Show', bookrating %></td>
+        <td><%= link_to 'Edit', edit_bookrating_path(bookrating) %></td>
+        <td><%= link_to 'Destroy', bookrating, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bookrating', new_bookrating_path %>

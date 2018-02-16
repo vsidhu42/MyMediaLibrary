@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Songratings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Songratingid</th>
+      <th>Thesongid</th>
+      <th>Rating</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @songratings.each do |songrating| %>
+      <tr>
+        <td><%= songrating.songratingid %></td>
+        <td><%= songrating.thesongid %></td>
+        <td><%= songrating.rating %></td>
+        <td><%= songrating.name %></td>
+        <td><%= link_to 'Show', songrating %></td>
+        <td><%= link_to 'Edit', edit_songrating_path(songrating) %></td>
+        <td><%= link_to 'Destroy', songrating, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Songrating', new_songrating_path %>

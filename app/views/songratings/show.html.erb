@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Songratingid:</strong>
+  <%= @songrating.songratingid %>
+</p>
+
+<p>
+  <strong>Thesongid:</strong>
+  <%= @songrating.thesongid %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @songrating.rating %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @songrating.name %>
+</p>
+
+<%= link_to 'Edit', edit_songrating_path(@songrating) %> |
+<%= link_to 'Back', songratings_path %>

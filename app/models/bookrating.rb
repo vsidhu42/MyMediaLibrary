@@ -1,0 +1,2 @@
+class Bookrating < ApplicationRecord
+end

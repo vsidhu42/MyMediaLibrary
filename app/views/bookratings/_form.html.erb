@@ -1,0 +1,37 @@
+<%= form_with(model: bookrating, local: true) do |form| %>
+  <% if bookrating.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bookrating.errors.count, "error") %> prohibited this bookrating from being saved:</h2>
+
+      <ul>
+      <% bookrating.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :bookratingid %>
+    <%= form.number_field :bookratingid, id: :bookrating_bookratingid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thebookid %>
+    <%= form.number_field :thebookid, id: :bookrating_thebookid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.text_field :rating, id: :bookrating_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :bookrating_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

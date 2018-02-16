@@ -1,0 +1,2 @@
+class Movierating < ApplicationRecord
+end
