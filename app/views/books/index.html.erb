@@ -16,9 +16,14 @@
   <tbody>
     <% @books.each do |book| %>
       <tr>
-        <td><%= book.bookid %>
+        <td><%= book.bookid %></td>
+        <td><%= book.title %>
+          <br>
+          <% Bookrating.where(thebookid: book.bookid).find_each do |bookrates| %>
+            <span style="padding-left:20px; font-size:10px;">Name: <%= bookrates.name %> Score: <%= bookrates.rating %></span>
+            <br>
+          <% end %>
         </td>
-        <td><%= book.title %></td>
         <td><%= book.theyear %></td>
         <td><%= book.author %></td>
         <td><%= link_to 'Show', book %></td>
