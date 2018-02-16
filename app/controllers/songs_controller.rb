@@ -4,7 +4,11 @@ class SongsController < ApplicationController
   # GET /songs
   # GET /songs.json
   def index
-    @songs = Song.all.paginate(page: params[:page], per_page: 50)
+
+    @search = Song.search(params[:q])
+    @songs = @search.result.paginate(page: params[:page], per_page: 50)
+
+    #@songs = Song.all.paginate(page: params[:page], per_page: 50)
   end
 
   # GET /songs/1
