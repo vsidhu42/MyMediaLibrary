@@ -4,7 +4,7 @@ class SongratingsController < ApplicationController
   # GET /songratings
   # GET /songratings.json
   def index
-    @songratings = Songrating.all
+    @songratings = Songrating.all.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /songratings/1

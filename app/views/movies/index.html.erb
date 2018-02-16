@@ -8,7 +8,7 @@
       <th>Movieid</th>
       <th>Title</th>
       <th>Theyear</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -21,6 +21,7 @@
         <td><%= link_to 'Show', movie %></td>
         <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
         <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "New Movie Rating", new_movierating_path(:themovie => movie.movieid) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,3 +30,5 @@
 <br>
 
 <%= link_to 'New Movie', new_movie_path %>
+
+<%= will_paginate @posts %>

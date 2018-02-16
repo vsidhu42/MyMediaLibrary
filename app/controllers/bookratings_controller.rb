@@ -4,7 +4,7 @@ class BookratingsController < ApplicationController
   # GET /bookratings
   # GET /bookratings.json
   def index
-    @bookratings = Bookrating.all
+    @bookratings = Bookrating.all.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /bookratings/1

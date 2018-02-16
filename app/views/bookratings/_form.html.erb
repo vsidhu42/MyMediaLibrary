@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :bookratingid %>
-    <%= form.number_field :bookratingid, id: :bookrating_bookratingid %>
+    <%= form.number_field :bookratingid, id: :bookrating_bookratingid, value: Bookrating.maximum('bookratingid') + 1 %>
   </div>
 
   <div class="field">
     <%= form.label :thebookid %>
-    <%= form.number_field :thebookid, id: :bookrating_thebookid %>
+    <%= form.number_field :thebookid, id: :bookrating_thebookid, value: [params[:thebook]] %>
   </div>
 
   <div class="field">

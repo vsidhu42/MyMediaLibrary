@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :movieratingid %>
-    <%= form.number_field :movieratingid, id: :movierating_movieratingid %>
+    <%= form.number_field :movieratingid, id: :movierating_movieratingid, value: Movierating.maximum('movieratingid') + 1 %>
   </div>
 
   <div class="field">
     <%= form.label :themovieid %>
-    <%= form.number_field :themovieid, id: :movierating_themovieid %>
+    <%= form.number_field :themovieid, id: :movierating_themovieid, value: [params[:themovie]] %>
   </div>
 
   <div class="field">

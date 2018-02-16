@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :songratingid %>
-    <%= form.number_field :songratingid, id: :songrating_songratingid %>
+    <%= form.number_field :songratingid, id: :songrating_songratingid, value: Songrating.maximum('songratingid') + 1 %>
   </div>
 
   <div class="field">
     <%= form.label :thesongid %>
-    <%= form.number_field :thesongid, id: :songrating_thesongid %>
+    <%= form.number_field :thesongid, id: :songrating_thesongid, value: [params[:thesong]] %>
   </div>
 
   <div class="field">

@@ -10,7 +10,7 @@
       <th>Theyear</th>
       <th>Artist</th>
       <th>Album</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -25,6 +25,7 @@
         <td><%= link_to 'Show', song %></td>
         <td><%= link_to 'Edit', edit_song_path(song) %></td>
         <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "New Song Rating", new_songrating_path(:thesong => song.songid) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,3 +34,5 @@
 <br>
 
 <%= link_to 'New Song', new_song_path %>
+
+<%= will_paginate @posts %>
